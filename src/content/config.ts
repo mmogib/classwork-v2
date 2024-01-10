@@ -2,7 +2,7 @@
 import { z, defineCollection } from "astro:content";
 // 2. Define your collection(s)
 const paperCollection = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "data", // v2.5.0 and later
   schema: z.object({
     key: z.string(),
     authors: z.array(z.string()),
