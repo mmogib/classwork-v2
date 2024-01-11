@@ -11,10 +11,6 @@ const author = defineCollection({
     _type: z.literal("author"),
     _updatedAt: z.string(),
     name: z.string(),
-    slug: z.object({
-      _type: z.literal("slug"),
-      current: z.string(),
-    }),
   }),
 });
 const teacher = defineCollection({
