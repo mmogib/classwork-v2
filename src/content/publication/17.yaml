@@ -1,0 +1,32 @@
+_createdAt: "2020-12-11T09:27:49Z"
+_id: "17"
+_rev: "fS8ElWyBEaytBQCJQY3PYV"
+_type: "publication"
+_updatedAt: "2020-12-23T07:54:36Z"
+authors:
+  - _key: "f61b7541c49b"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+  - _key: "2cab6db6ed36"
+    _ref: "983b4a66-7ccd-4357-afed-e3f4512e23f2"
+    _type: "reference"
+citation: "Images, Fixed Points and Vector Extremum Problems, Antoni, C. & Alshahrani, M. J Optim Theory Appl (2017). https://doi.org/10.1007/s10957-017-1158-4."
+journal: "Journal of Optimization Theory and Applications"
+note: "https://doi.org/10.1007/s10957-017-1158-4."
+order: 17
+pub:
+  - _key: "eea6aa7a2b25"
+    _type: "block"
+    children:
+      - _key: "431beff01279"
+        _type: "span"
+        marks: []
+        text: "Images, Fixed Points and Vector Extremum Problems, Antoni, C. & Alshahrani, M. J Optim Theory Appl (2017). https://doi.org/10.1007/s10957-017-1158-4."
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "Images, Fixed Points and Vector Extremum Problems"
+year: "2017"

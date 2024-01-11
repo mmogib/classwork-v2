@@ -1,0 +1,18 @@
+---
+import MainLayout from "@layout/MainLayout.astro";
+import Course from "@components/Course.astro";
+import { getCollection } from "astro:content";
+const courses = await getCollection("course");
+---
+
+<MainLayout>
+  <h1 class="text-4xl font-extrabold dark:text-white">Courses Taught</h1>
+
+  <div class="mt-5 grid grid-cols-2 gap-3">
+    {
+      courses
+        .sort((a, b) => (a.data["term._ref"] <= b.data["term._ref"] ? 1 : -1))
+        .map((v) => <Course course={v} />)
+    }
+  </div>
+</MainLayout>

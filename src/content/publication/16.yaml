@@ -1,0 +1,32 @@
+_createdAt: "2020-12-11T09:27:49Z"
+_id: "16"
+_rev: "LE1g05XHEMMthuQgmtFa9S"
+_type: "publication"
+_updatedAt: "2021-05-19T10:48:49Z"
+authors:
+  - _key: "9559eaa56255"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+  - _key: "9ffebc8d05bb"
+    _ref: "983b4a66-7ccd-4357-afed-e3f4512e23f2"
+    _type: "reference"
+citation: "Some Remarks on Cone-Functions and Related Fields, Antoni, C. & Alshahrani, M. J Optim Theory Appl (2017). https://doi.org/10.1007/s10957-017-1202-4."
+journal: "Journal of Optimization Theory and Applications"
+note: "https://doi.org/10.1007/s10957-017-1202-4"
+order: 16
+pub:
+  - _key: "c92d2635b14f"
+    _type: "block"
+    children:
+      - _key: "3f81777f3645"
+        _type: "span"
+        marks: []
+        text: "Some Remarks on Cone-Functions and Related Fields, Antoni, C. & Alshahrani, M. J Optim Theory Appl (2017). https://doi.org/10.1007/s10957-017-1202-4"
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "Some Remarks on Cone-Functions and Related Fields"
+year: "2017"

@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import Me from "@assets/imgs/me-in-uot-2018-2.jpg";
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -14,30 +19,33 @@
           aria-label="Global"
         >
           <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
+            <a href="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Dr. Mohammed Alshahrani</span>
-              <img
+              <!-- <img
                 class="h-8 w-auto rounded-full"
                 src="https://www.dropbox.com/scl/fi/nby5aqb8lmq6b6tryczur/me__400x400.jpg?rlkey=3hzn35mh0igrerutnzqtx5fe8&raw=1"
                 alt=""
-              />
+              /> -->
+              <Image src={Me} alt="Me" class="h-8 w-9 rounded-full" />
             </a>
           </div>
 
           <div class="flex gap-2 lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-              >Product</a
+            <a
+              href="/resume/"
+              class="text-sm font-semibold leading-6 text-gray-900">Resume</a
             >
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-              >Features</a
+            <a
+              href="/teaching/"
+              class="text-sm font-semibold leading-6 text-gray-900">Teaching</a
             >
             <a
               href="/research/"
               class="text-sm font-semibold leading-6 text-gray-900">Research</a
             >
             <a
-              href="/about/"
-              class="text-sm font-semibold leading-6 text-gray-900">About</a
+              href="/classwork/"
+              class="text-sm font-semibold leading-6 text-gray-900">Classwork</a
             >
           </div>
         </nav>

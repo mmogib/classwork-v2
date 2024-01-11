@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "@layout/MainLayout.astro";
+const education = await getCollection("education");
+const employment = await getCollection("employment");
+---
+
+<MainLayout>
+  <h1>Education</h1>
+  {education.map((v) => <p>{v.data.content}</p>)}
+
+  <h1>Employment</h1>
+  {employment.map((v) => <p>{v.data.position}</p>)}
+</MainLayout>

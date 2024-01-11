@@ -1,0 +1,35 @@
+_createdAt: "2020-12-11T09:27:49Z"
+_id: "1"
+_rev: "YxXi5DCehknTuOjGHCVlls"
+_type: "publication"
+_updatedAt: "2020-12-23T07:55:56Z"
+authors:
+  - _key: "150c964238f7"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+  - _key: "67a31c8c40bb"
+    _ref: "52752545-5417-47c6-a83c-31e3e60253e3"
+    _type: "reference"
+  - _key: "4dfc34817cdb"
+    _ref: "27f80db9-6f46-4293-8ed5-3e21c9ce7afd"
+    _type: "reference"
+citation: "Alshsahrani, Mohammed M.; Al-Homidan, Suliman S. 'Mixed semidefinite and second-order cone optimization approach for the Hankel matrix approximation problem', Nonlinear Dyn. Syst. Theory 6, no. 3, 2006.."
+journal: "Nonlinear Dyn. Syst. Theory 6"
+number: 3
+order: 1
+pub:
+  - _key: "21bfa295dda5"
+    _type: "block"
+    children:
+      - _key: "242328370678"
+        _type: "span"
+        marks: []
+        text: "Alshsahrani, Mohammed M.; Al-Homidan, Suliman S. 'Mixed semidefinite and second-order cone optimization approach for the Hankel matrix approximation problem', Nonlinear Dyn. Syst. Theory 6, no. 3, 2006.."
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "Mixed semidefinite and second-order cone optimization approach for the Hankel matrix approximation problem"
+year: "2006"

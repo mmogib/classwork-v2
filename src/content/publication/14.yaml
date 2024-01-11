@@ -1,0 +1,35 @@
+_createdAt: "2020-12-11T09:27:49Z"
+_id: "14"
+_rev: "NDRzOKYFjMo3oyo54OIFCT"
+_type: "publication"
+_updatedAt: "2020-12-23T07:55:18Z"
+authors:
+  - _key: "6169fcb8c7a9"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+  - _key: "39b0f710e639"
+    _ref: "15e416d6-c29e-4201-86a0-b402584d5a8c"
+    _type: "reference"
+  - _key: "ff2954545ff1"
+    _ref: "fee5a0e9-86ce-43e9-956f-70b8d594ba8f"
+    _type: "reference"
+citation: "El-Gebeily, M. A.; Mordukhovich, B. S. & Alshahrani, M. M. Optimal Control of Constrained Self-Adjoint Nonlinear Operator Equations in Hilbert Spaces Journal of Optimization Theory and Applications, 2016, 169, 735-758"
+journal: "Journal of Optimization Theory and Applications,"
+order: 14
+pages: "735-758"
+pub:
+  - _key: "cdeb3f9e5bce"
+    _type: "block"
+    children:
+      - _key: "94a997f0d26f"
+        _type: "span"
+        marks: []
+        text: "El-Gebeily, M. A.; Mordukhovich, B. S. & Alshahrani, M. M. Optimal Control of Constrained Self-Adjoint Nonlinear Operator Equations in Hilbert Spaces Journal of Optimization Theory and Applications, 2016, 169, 735-758"
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "Optimal Control of Constrained Self-Adjoint Nonlinear Operator Equations in Hilbert Spaces"
+year: "2016"

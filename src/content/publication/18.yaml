@@ -1,0 +1,69 @@
+_createdAt: "2020-12-11T09:27:49Z"
+_id: "18"
+_rev: "fS8ElWyBEaytBQCJQY3DN8"
+_type: "publication"
+_updatedAt: "2020-12-23T07:53:16Z"
+authors:
+  - _key: "ed822bdeb093"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+  - _key: "613e46623545"
+    _ref: "e632138f-e0c3-4f05-a3c4-d14bb93cf9c1"
+    _type: "reference"
+  - _key: "b73b946c6461"
+    _ref: "27f80db9-6f46-4293-8ed5-3e21c9ce7afd"
+    _type: "reference"
+  - _key: "4449fbeeb22f"
+    _ref: "2f4799a9-687a-42e0-b42b-629e869f25f6"
+    _type: "reference"
+  - _key: "4b2fd4475470"
+    _ref: "e921d9a9-a398-4ec1-baf2-92bf8e6a5efc"
+    _type: "reference"
+citation: "Abbas, M., AlShahrani, M., Ansari, Q.H. et al. Iterative methods for solving proximal split minimization problems. Numer Algor 78, 193–215 (2018). https://doi.org/10.1007/s11075-017-0372-3"
+journal: "Numerical Algorithms"
+note: "https://doi.org/10.1007/s11075-017-0372-3"
+order: 18
+pages: "193-215"
+pub:
+  - _key: "75bba9a30fbc"
+    _type: "block"
+    children:
+      - _key: "8b83f4df69f2"
+        _type: "span"
+        marks: []
+        text: "Abbas, M., AlShahrani, M., Ansari, Q.H. "
+      - _key: "c4773871a53f"
+        _type: "span"
+        marks:
+          - "em"
+        text: "et al."
+      - _key: "401bae00f940"
+        _type: "span"
+        marks: []
+        text: " Iterative methods for solving proximal split minimization problems. "
+      - _key: "a3e4a8bef9f6"
+        _type: "span"
+        marks:
+          - "em"
+        text: "Numer Algor"
+      - _key: "25a735e9fab1"
+        _type: "span"
+        marks: []
+        text: " "
+      - _key: "801eecb71762"
+        _type: "span"
+        marks:
+          - "strong"
+        text: "78,"
+      - _key: "99b79e06097c"
+        _type: "span"
+        marks: []
+        text: " 193–215 (2018). https://doi.org/10.1007/s11075-017-0372-3"
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "Iterative methods for solving proximal split minimization problems "
+year: "2018"

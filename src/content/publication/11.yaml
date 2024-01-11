@@ -1,0 +1,30 @@
+_createdAt: "2020-12-11T09:27:49Z"
+_id: "11"
+_rev: "NDRzOKYFjMo3oyo54OII4X"
+_type: "publication"
+_updatedAt: "2020-12-23T07:55:44Z"
+authors:
+  - _key: "203e2b99d3f0"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+citation: "Alshahrani, Mohammed M., 'Scalarized system of nonsmooth vector quasi-variational inequalities with applications to Debreu type vector equilibrium problems.', Journal of Inequalities and Applications, no. 1, pp. 1-10, 2015."
+journal: "Journal of Inequalities and Applications"
+number: 1
+order: 11
+pages: "1-10"
+pub:
+  - _key: "50e34c32e61d"
+    _type: "block"
+    children:
+      - _key: "0562e4c25906"
+        _type: "span"
+        marks: []
+        text: "Alshahrani, Mohammed M., 'Scalarized system of nonsmooth vector quasi-variational inequalities with applications to Debreu type vector equilibrium problems.', Journal of Inequalities and Applications, no. 1, pp. 1-10, 2015."
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "Scalarized system of nonsmooth vector quasi-variational inequalities with applications to Debreu type vector equilibrium problems."
+year: "2015"

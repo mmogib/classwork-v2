@@ -1,0 +1,28 @@
+_createdAt: "2020-12-11T09:27:49Z"
+_id: "8"
+_rev: "NDRzOKYFjMo3oyo54OJCCX"
+_type: "publication"
+_updatedAt: "2020-12-23T08:03:35Z"
+authors:
+  - _key: "1a6f3c3143ba"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+citation: "M. M. Alshahrani, 'Nonsmooth Quasi-Variational-like Inequalities with Applications to Nonsmooth Vector Quasi-Optimization', Filomat, 2015. Published."
+journal: "Filomat"
+order: 8
+pub:
+  - _key: "a8cef95dbca5"
+    _type: "block"
+    children:
+      - _key: "1db012bcd680"
+        _type: "span"
+        marks: []
+        text: "M. M. Alshahrani, 'Nonsmooth Quasi-Variational-like Inequalities with Applications to Nonsmooth Vector Quasi-Optimization', Filomat, 2015. Published."
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "M. M. Alshahrani, 'Nonsmooth Quasi-Variational-like Inequalities with Applications to Nonsmooth Vector Quasi-Optimization', Filomat, 2015. Published."
+year: "2015"

@@ -1,7 +1,8 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "@layout/MainLayout.astro";
 import { getCollection } from "astro:content";
 const allPapers = await getCollection("papers");
+const projects = await getCollection("project");
 ---
 
 <MainLayout>
@@ -9,6 +10,9 @@ const allPapers = await getCollection("papers");
 
   <!-- have a button POST a click via AJAX -->
   <button hx-post="/clicked/" hx-swap="outerHTML"> Click Me</button>
-
+  <h1>Papers</h1>
   {allPapers.map((paper) => <div>{paper.data.key}</div>)}
+
+  <h1>Projects</h1>
+  {projects.map((pr) => <div>{pr.data.title}</div>)}
 </MainLayout>

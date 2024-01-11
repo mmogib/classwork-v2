@@ -1,0 +1,36 @@
+_createdAt: "2020-12-11T10:38:56Z"
+_id: "4"
+_rev: "NDRzOKYFjMo3oyo54OIgXx"
+_type: "publication"
+_updatedAt: "2020-12-23T07:59:44Z"
+authors:
+  - _key: "4bfb4db92aae"
+    _ref: "cb92775d-a92a-4ea6-bdef-43e60d6641ff"
+    _type: "reference"
+  - _key: "cd02f938b64d"
+    _ref: "15e416d6-c29e-4201-86a0-b402584d5a8c"
+    _type: "reference"
+  - _key: "9569f59a7475"
+    _ref: "fee5a0e9-86ce-43e9-956f-70b8d594ba8f"
+    _type: "reference"
+citation: "Alshahrani, M. M., M. A. El-Gebeily, and Mordukhovich, B. S., 'MAXIMUM PRINCIPLE FOR OPTIMAL CONTROL SYSTEMS GOVERNED BY SINGULAR ORDINARY DIFFERENTIAL OPERATORS IN HILBERT SPACES', Dynamic Systems and Applications, vol. 21, no. 2-3, pp. 219-233, 2012."
+journal: "Dynamic Systems and Applications"
+order: 4
+pages: "219-233"
+pub:
+  - _key: "effb77b88db5"
+    _type: "block"
+    children:
+      - _key: "6c40940bbaf0"
+        _type: "span"
+        marks: []
+        text: "Alshahrani, M. M., M. A. El-Gebeily, and Mordukhovich, B. S., 'MAXIMUM PRINCIPLE FOR OPTIMAL CONTROL SYSTEMS GOVERNED BY SINGULAR ORDINARY DIFFERENTIAL OPERATORS IN HILBERT SPACES', Dynamic Systems and Applications, vol. 21, no. 2-3, pp. 219-233, 2012."
+    markDefs: []
+    style: "normal"
+publicationType._ref: "2d1b770d-4672-45e3-8489-69e44fdb4e6a"
+publicationType._type: "reference"
+status:
+  - "published"
+title: "Alshahrani, M. M., M. A. El-Gebeily, and Mordukhovich, B. S., 'MAXIMUM PRINCIPLE FOR OPTIMAL CONTROL SYSTEMS GOVERNED BY SINGULAR ORDINARY DIFFERENTIAL OPERATORS IN HILBERT SPACES', Dynamic Systems and Applications, vol. 21, no. 2-3, pp. 219-233, 2012."
+volume: "21"
+year: "2012"

@@ -1,7 +1,63 @@
 // 1. Import utilities from `astro:content`
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection, reference } from "astro:content";
 // 2. Define your collection(s)
-const paperCollection = defineCollection({
+
+const author = defineCollection({
+  type: "data",
+  schema: z.object({
+    _createdAt: z.string(),
+    _id: z.string(),
+    _rev: z.string(),
+    _type: z.literal("author"),
+    _updatedAt: z.string(),
+    name: z.string(),
+    slug: z.object({
+      _type: z.literal("slug"),
+      current: z.string(),
+    }),
+  }),
+});
+const teacher = defineCollection({
+  type: "data",
+  schema: z.object({
+    _createdAt: z.string(),
+    _id: z.string(),
+    _rev: z.string(),
+    _type: z.literal("teacher"),
+    _updatedAt: z.string(),
+    email: z.string(),
+    mobile: z.string(),
+    teacher_name: z.string(),
+    title: z.string(),
+  }),
+});
+const term = defineCollection({
+  type: "data",
+  schema: z.object({
+    _createdAt: z.string(),
+    _id: z.string(),
+    _rev: z.string(),
+    _type: z.literal("term"),
+    _updatedAt: z.string(),
+    isActive: z.boolean(),
+    name: z.string(),
+    term_num: z.number(),
+  }),
+});
+const education = defineCollection({
+  type: "data",
+  schema: z.object({
+    _createdAt: z.string(),
+    _id: z.string(),
+    _rev: z.string(),
+    _type: z.literal("education"),
+    _updatedAt: z.string(),
+    content: z.string(),
+    institution: z.string(),
+    year: z.string(),
+  }),
+});
+const papers = defineCollection({
   type: "data", // v2.5.0 and later
   schema: z.object({
     key: z.string(),
@@ -18,8 +74,59 @@ const paperCollection = defineCollection({
     doi: z.string().optional(),
   }),
 });
-// 3. Export a single `collections` object to register your collection(s)
-//    This key should match your collection directory name in "src/content"
+
+const employment = defineCollection({
+  type: "data",
+  schema: z.object({
+    _createdAt: z.string(),
+    _id: z.string(),
+    _rev: z.string(),
+    _type: z.literal("employment"),
+    _updatedAt: z.string(),
+    address: z.string(),
+    endYear: z.string(),
+    position: z.string(),
+    startYear: z.string(),
+  }),
+});
+
+const project = defineCollection({
+  type: "data",
+  schema: z.object({
+    _createdAt: z.string(),
+    _id: z.string(),
+    _rev: z.string(),
+    _type: z.literal("project"),
+    _updatedAt: z.string(),
+    order: z.number(),
+    status: z.enum(["proposed", "in-progress", "completed"]),
+    title: z.string(),
+  }),
+});
+
+const course = defineCollection({
+  type: "data",
+  schema: z.object({
+    _createdAt: z.string(),
+    _id: z.string(),
+    _rev: z.string(),
+    _type: z.literal("course"),
+    _updatedAt: z.string(),
+    code: z.string(),
+    name: z.string(),
+    section: z.string(),
+    ["teacher._ref"]: reference("teacher"),
+    ["term._ref"]: reference("term"),
+    url: z.string(),
+  }),
+});
 export const collections = {
-  papers: paperCollection,
+  papers,
+  author,
+  teacher,
+  term,
+  education,
+  employment,
+  project,
+  course,
 };
