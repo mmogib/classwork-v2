@@ -1,6 +1,6 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection, reference } from "astro:content";
-import { papersSchema } from "./types";
+import { papersSchema } from "@mytypes/content_types";
 // 2. Define your collection(s)
 
 const author = defineCollection({
@@ -98,6 +98,7 @@ const course = defineCollection({
     ["teacher._ref"]: reference("teacher"),
     ["term._ref"]: reference("term"),
     url: z.string(),
+    airbase: z.string().optional(),
   }),
 });
 export const collections = {

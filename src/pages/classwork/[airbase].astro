@@ -1,0 +1,73 @@
+---
+import MainLayout from "@layout/MainLayout.astro";
+
+const { airbase } = Astro.params;
+---
+
+<MainLayout>
+  <div class="flex flex-col m-auto">
+    <p class="w-full border p-5 mb-5 shadow-md">
+      Please enter the code you received via email, and click `submit`
+    </p>
+    <div>
+      <form
+        hx-post="/classwork/process"
+        hx-swap="innerHTML"
+        hx-indicator="#indicator"
+        hx-target="#studentCLW"
+        class="max-w-sm mx-auto"
+      >
+        <label
+          for="email"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Your Personal Code</label
+        >
+        <input
+          placeholder="If you don't have one, ask me for it."
+          type="password"
+          id="student_code"
+          name="student_code"
+          aria-describedby="helper-text-explanation"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+        <input hidden value={airbase} id="airbase" name="airbase" />
+        <p
+          id="helper-text-explanation"
+          class="mt-2 text-sm text-gray-500 dark:text-gray-400"
+        >
+          Please type your personal code here..
+        </p>
+        <button
+          class="mt-5 w-full inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+        >
+          <span
+            class="w-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+          >
+            Submit
+          </span>
+        </button>
+      </form>
+      <div class="mt-5 flex flex-col">
+        <div id="indicator" class="htmx-indicator">
+          <div
+            class="px-3
+          py-1
+          text-xs
+          font-medium
+          leading-none
+          text-center
+          text-blue-800
+          bg-blue-200
+          rounded-full
+          animate-pulse
+          dark:bg-blue-900
+          dark:text-blue-200"
+          >
+            loading...
+          </div>
+        </div>
+        <div class="flex justify-center" id="studentCLW"></div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

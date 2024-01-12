@@ -1,0 +1,13 @@
+---
+import { type GradeItem } from "@mytypes/classwork";
+type Props = {
+  item: GradeItem;
+};
+const { item } = Astro.props;
+const infoclass = item.category === "info" ? "bg-green-100" : "";
+---
+
+<div class=`w-full flex justify-between shadow-md p-2 rounded-md ${infoclass}`>
+  <h2>{item.label}</h2>
+  <p>{item.value}</p>
+</div>
