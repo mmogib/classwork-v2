@@ -1,17 +1,27 @@
 ---
 import MainLayout from "@layout/MainLayout.astro";
 import Course from "@components/Course.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 const courses = await getCollection("course");
+const courses_with_terms = await Promise.all(
+  courses.map(async (v) => {
+    const d = v.data;
+    const term = await getEntry("term", d["term._ref"].id);
+    return {
+      ...v,
+      data: d,
+      term: { ...term, order: term.data.term_num },
+    };
+  })
+);
 ---
 
 <MainLayout>
   <h1 class="text-4xl font-extrabold dark:text-white">Courses Taught</h1>
-
-  <div class="mt-5 grid grid-cols-2 gap-3">
+  <div class="mt-5 m-auto grid grid-cols-2 gap-3">
     {
-      courses
-        .sort((a, b) => (a.data["term._ref"] <= b.data["term._ref"] ? 1 : -1))
+      courses_with_terms
+        .sort((a, b) => (a.term.order >= b.term.order ? -1 : 1))
         .map((v) => <Course course={v} />)
     }
   </div>

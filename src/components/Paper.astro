@@ -1,0 +1,29 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { type Paper } from "@content/types";
+type Props = {
+  paper: CollectionEntry<"papers">;
+};
+const { paper } = Astro.props;
+
+function APA(data: Paper) {
+  const authors = data.authors.join(",");
+  const year = data.year ? `(${data.year})` : "";
+  const title = data.title;
+  const journal = data.journal ? `. ${data.journal}` : "";
+  const volume = data.volume ? `, ${data.volume}` : "";
+  const number = data.number ? `(${data.number})` : "";
+  const pages = data.pages ? `, ${data.pages}` : "";
+  const doi = data.doi ? `. https://doi.org/${data.doi}` : "";
+  return `${authors}${year}.${title}${journal}${volume}${number}${pages}${doi}`;
+}
+---
+
+<div
+  class="max-w p-6 mx-4 bg-white dark:bg-gray-800 rounded-md shadow-md transition duration-300"
+>
+  <p class="text-sm text-gray-500">{paper.data.key}</p>
+  <p class="text-1xl mb-2">
+    {APA(paper.data)}
+  </p>
+</div>

@@ -1,0 +1,18 @@
+---
+import { type CollectionEntry } from "astro:content";
+type Props = {
+  education: CollectionEntry<"education">;
+};
+const { education } = Astro.props;
+---
+
+<div
+  class="max-w p-6 mx-4 bg-white dark:bg-gray-800 rounded-md shadow-md transition duration-300"
+>
+  <p class="text-sm text-gray-500">
+    {education.data.institution} ({education.data.year})
+  </p>
+  <p class="text-1xl mb-2">
+    {education.data.content}
+  </p>
+</div>

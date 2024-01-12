@@ -1,5 +1,6 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection, reference } from "astro:content";
+import { papersSchema } from "./types";
 // 2. Define your collection(s)
 
 const author = defineCollection({
@@ -30,11 +31,9 @@ const teacher = defineCollection({
 const term = defineCollection({
   type: "data",
   schema: z.object({
-    _createdAt: z.string(),
     _id: z.string(),
     _rev: z.string(),
     _type: z.literal("term"),
-    _updatedAt: z.string(),
     isActive: z.boolean(),
     name: z.string(),
     term_num: z.number(),
@@ -55,20 +54,7 @@ const education = defineCollection({
 });
 const papers = defineCollection({
   type: "data", // v2.5.0 and later
-  schema: z.object({
-    key: z.string(),
-    authors: z.array(z.string()),
-    title: z.string(),
-    journal: z.string().optional(),
-    volume: z.union([z.number(), z.string()]).optional(),
-    number: z.union([z.number(), z.string()]).optional(),
-    pages: z.union([z.string(), z.number()]).optional(),
-    year: z.number().optional(),
-    article_id: z.string().optional(),
-    published: z.boolean().optional(),
-    accepted: z.boolean().optional(),
-    doi: z.string().optional(),
-  }),
+  schema: papersSchema,
 });
 
 const employment = defineCollection({
@@ -103,11 +89,9 @@ const project = defineCollection({
 const course = defineCollection({
   type: "data",
   schema: z.object({
-    _createdAt: z.string(),
     _id: z.string(),
     _rev: z.string(),
     _type: z.literal("course"),
-    _updatedAt: z.string(),
     code: z.string(),
     name: z.string(),
     section: z.string(),

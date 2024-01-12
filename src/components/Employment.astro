@@ -1,0 +1,20 @@
+---
+import { type CollectionEntry } from "astro:content";
+type Props = {
+  employment: CollectionEntry<"employment">;
+};
+const { employment } = Astro.props;
+---
+
+<div
+  class="max-w p-6 mx-4 bg-white dark:bg-gray-800 rounded-md shadow-md transition duration-300"
+>
+  <p class="text-sm text-gray-500">
+    {employment.data.position} ({employment.data.startYear}-{
+      employment.data.endYear
+    })
+  </p>
+  <p class="text-1xl mb-2">
+    {employment.data.address}
+  </p>
+</div>
