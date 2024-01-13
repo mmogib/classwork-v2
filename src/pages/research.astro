@@ -3,10 +3,14 @@ import Paper from "@components/Paper.astro";
 import Project from "@components/Project.astro";
 import MainLayout from "@layout/MainLayout.astro";
 import { getCollection } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
 const allPapers = await getCollection("papers");
 const projects = await getCollection("project");
 ---
 
+<head>
+  <ViewTransitions />
+</head>
 <MainLayout>
   <!-- have a button POST a click via AJAX -->
   <!-- <button hx-post="/clicked/" hx-swap="outerHTML"> Click Me</button> -->

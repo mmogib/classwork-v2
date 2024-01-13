@@ -2,8 +2,12 @@
 import MainLayout from "@layout/MainLayout.astro";
 import { Image } from "astro:assets";
 import Me from "@assets/imgs/me-in-uot-2018-2.jpg";
+import { ViewTransitions } from "astro:transitions";
 ---
 
+<head>
+  <ViewTransitions />
+</head>
 <MainLayout>
   <div class="flex justify-center">
     <div

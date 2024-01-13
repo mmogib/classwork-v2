@@ -3,22 +3,28 @@ import { getCollection } from "astro:content";
 import MainLayout from "@layout/MainLayout.astro";
 import Education from "@components/Education.astro";
 import Employment from "@components/Employment.astro";
+import { ViewTransitions } from "astro:transitions";
 const education = await getCollection("education");
 const employment = await getCollection("employment");
 ---
 
+<head>
+  <ViewTransitions />
+</head>
 <MainLayout>
-  <div class="flex flex-col m-auto gap-4 mb-5">
-    <h1 class="text-4xl font-extrabold dark:text-white">Education</h1>
-    {education.map((education) => <Education education={education} />)}
-  </div>
+  <div class="flex flex-col m-auto md:w-3/4">
+    <div class="flex flex-col w-full m-auto gap-4 mb-5">
+      <h1 class="text-4xl font-extrabold dark:text-white">Education</h1>
+      {education.map((education) => <Education education={education} />)}
+    </div>
 
-  <div class="flex flex-col m-auto gap-4 mb-5">
-    <h1 class="text-4xl font-extrabold dark:text-white">Employment</h1>
-    {
-      employment
-        .sort((a, b) => (a.data.startYear >= b.data.startYear ? -1 : 1))
-        .map((v) => <Employment employment={v} />)
-    }
+    <div class="flex flex-col w-full m-auto gap-4 mb-5">
+      <h1 class="text-4xl font-extrabold dark:text-white">Employment</h1>
+      {
+        employment
+          .sort((a, b) => (a.data.startYear >= b.data.startYear ? -1 : 1))
+          .map((v) => <Employment employment={v} />)
+      }
+    </div>
   </div>
 </MainLayout>

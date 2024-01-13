@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import MainLayout from "@layout/MainLayout.astro";
 import Course from "@components/Course.astro";
 import { getCollection, getEntry } from "astro:content";
@@ -16,13 +18,19 @@ const courses_with_terms = await Promise.all(
 );
 ---
 
+<head>
+  <ViewTransitions />
+</head>
+
 <MainLayout>
-  <h1 class="text-4xl font-extrabold dark:text-white">Courses Taught</h1>
-  <div class="mt-5 m-auto grid grid-cols-2 gap-3">
-    {
-      courses_with_terms
-        .sort((a, b) => (a.term.order >= b.term.order ? -1 : 1))
-        .map((v) => <Course course={v} />)
-    }
+  <div class="flex flex-col md:w-full m-auto">
+    <h1 class="text-4xl font-extrabold dark:text-white">Courses Taught</h1>
+    <div class="mt-5 m-auto w-full grid grid-cols-2 md:grid-cols-3 gap-2">
+      {
+        courses_with_terms
+          .sort((a, b) => (a.term.order >= b.term.order ? -1 : 1))
+          .map((v) => <Course course={v} />)
+      }
+    </div>
   </div>
 </MainLayout>

@@ -3,6 +3,7 @@
 
 interface ImportMetaEnv {
   readonly AIRTABLE_TOKEN: string;
+  readonly MCR_AIRTABLE_BASE: string;
   // more env variables...
 }
 
