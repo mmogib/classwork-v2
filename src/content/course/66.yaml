@@ -1,0 +1,12 @@
+_id: "66"
+_rev: "66"
+_type: "course"
+code: "MATH441"
+name: "Advanced Calulus II"
+section: "1"
+teacher._ref: "teacher_1"
+teacher._type: "reference"
+term._ref: "term_232"
+term._type: "reference"
+url: https://www.dropbox.com/scl/fi/30mjzf4hoacs81cfmkhgs/T232_MATH441_Syllabus.pdf?rlkey=zfge25461dwe445r8lnzmphv2&raw=1
+airbase: appDoSNeajd6RJSTw

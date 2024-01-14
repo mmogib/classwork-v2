@@ -1,0 +1,12 @@
+_id: "67"
+_rev: "67"
+_type: "course"
+code: "MATH474"
+name: "Linear & Nonlinear Programming"
+section: "1"
+teacher._ref: "teacher_1"
+teacher._type: "reference"
+term._ref: "term_232"
+term._type: "reference"
+url: https://www.dropbox.com/scl/fi/mdfnepqz1oowvyrfklhlu/T232_MATH474_Syllabus.pdf?rlkey=nw19fb4f1s2xmlaszvgjqgu98&raw=1
+airbase: app9fnEUk2nwrrCRH
