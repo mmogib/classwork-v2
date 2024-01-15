@@ -1,0 +1,16 @@
+---
+type Props = {
+  className: string;
+  content: string;
+  title: string;
+};
+
+const { className, content, title } = Astro.props;
+---
+
+<section class=`py-16 ${className}`>
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">{title}</h2>
+    <p class="text-lg">{content}</p>
+  </div>
+</section>

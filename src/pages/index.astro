@@ -3,33 +3,95 @@ import MainLayout from "@layout/MainLayout.astro";
 import { Image } from "astro:assets";
 import Me from "@assets/imgs/me-in-uot-2018-2.jpg";
 import { ViewTransitions } from "astro:transitions";
+import FrontPageCard from "@components/FrontPageCard.astro";
 ---
 
 <head>
   <ViewTransitions />
 </head>
 <MainLayout>
-  <div class="flex justify-center">
+  <div class="flex flex-col items-center">
     <div
       class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
       aria-hidden="true"
     >
       <div
-        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0C7E40] to-[#D1B755] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        class="relative left-[calc(10%-11rem)] aspect-[1155/678] w-[69.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0C7E40] to-[#D1B755] opacity-30 sm:left-[calc(90%-30rem)] sm:w-[72.1875rem]"
         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
       >
       </div>
     </div>
-    <div class="flex justify-around max-w-5xl py-32 sm:py-48 lg:py-56">
-      <div class="flex flex-col justify-between text-center">
-        <h1 class="lg:text-6xl tracking-tight text-gray-900 text-4xl">
+    <div class="flex justify-around max-w-5xl py-24 sm:py-12 lg:py-24">
+      <div class="flex flex-col justify-between items-center text-center">
+        <h1 class="lg:text-4xl tracking-tight text-gray-900 text-2xl">
           Dr. Mohammed Alshahrani
         </h1>
-        <h1 class="lg:text-6xl tracking-tight text-gray-900 text-3xl">
-          Website
-        </h1>
+        <p
+          class="lg:text-2xl tracking-tight text-gray-900 text-1xl text-left w-3/4"
+        >
+          Welcome to my personal website! I am passionate about teaching and the
+          fascinating realm of optimization, a field that presents numerous
+          captivating real-life problems.
+        </p>
       </div>
       <Image class="ml-5 rounded lg:h-64 lg:w-64 h-40 w-40" src={Me} alt="Me" />
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Academic Journey Section -->
+
+      <FrontPageCard
+        title="Academic Journey"
+        content=`My academic journey has been shaped by a relentless pursuit of
+      knowledge. Currently, I serve as an Associate Professor in the
+      Department of Mathematics at King Fahd University of Petroleum and
+      Minerals (KFUPM), Saudi Arabia. My role allows me to share my
+      enthusiasm for mathematics with bright minds and aspiring learners.`
+        className="rounded-3xl p-5 bg-kfupm-gold text-gray-900"
+      />
+      <!-- Teaching Philosophy Section -->
+
+      <FrontPageCard
+        title="Teaching Philosophy"
+        content=`In the classroom, my commitment extends beyond imparting knowledge -
+      I deeply care about my students' understanding. I believe in
+      fostering an environment that nurtures curiosity, critical thinking,
+      and a genuine passion for the subject. Witnessing students grasp
+      complex concepts and apply them to real-world challenges is
+      immensely rewarding.`
+        className="bg-background text-gray-900"
+      />
+
+      <!-- Research and Real-Life Impact Section -->
+
+      <FrontPageCard
+        title="Research and Real-Life Impact"
+        content=`My research endeavors focus on using optimization techniques to
+      address real-life problems. These challenges, ranging from industry
+      applications to societal issues, drive my exploration into
+      innovative solutions. The ability to bridge theoretical knowledge
+      with practical impact motivates my work and underscores the
+      importance of optimization in our interconnected world.`
+        className="bg-background text-gray-900"
+      />
+
+      <!-- Programming Proficiency Section -->
+      <FrontPageCard
+        title="Programming Proficiency"
+        content=`In addition to my academic pursuits, I possess a high level of 
+      proficiency in various programming languages. From Julia and MATLAB
+      to Python and JavaScript, these tools are not just languages for me
+      - they are the means to translate mathematical concepts into
+      practical solutions. The synergy between programming and
+      optimization opens new avenues for addressing complex problems.`
+        className="rounded-3xl p-5 bg-kfupm-gold text-gray-900"
+      />
+
+      <!-- Thank You Section -->
+      <FrontPageCard
+        title="Thank you"
+        content="Thank you for visiting my website. I hope to share more insights, discoveries, and the joy of optimization with you."
+        className="col-span-2 rounded-2xl bg-kfupm-black text-kfupm-green"
+      />
     </div>
   </div>
 </MainLayout>
