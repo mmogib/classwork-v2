@@ -98,6 +98,7 @@ const course = defineCollection({
     ["teacher._ref"]: reference("teacher"),
     ["term._ref"]: reference("term"),
     url: z.string(),
+    url2: z.string().optional(),
     airbase: z.string().optional(),
   }),
 });
