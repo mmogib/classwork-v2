@@ -1,6 +1,6 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection, reference } from "astro:content";
-import { papersSchema } from "@mytypes/content_types";
+import { papersSchema, employmentSchema } from "@mytypes/content_types";
 // 2. Define your collection(s)
 
 const author = defineCollection({
@@ -59,17 +59,7 @@ const papers = defineCollection({
 
 const employment = defineCollection({
   type: "data",
-  schema: z.object({
-    _createdAt: z.string(),
-    _id: z.string(),
-    _rev: z.string(),
-    _type: z.literal("employment"),
-    _updatedAt: z.string(),
-    address: z.string(),
-    endYear: z.string(),
-    position: z.string(),
-    startYear: z.string(),
-  }),
+  schema: employmentSchema,
 });
 
 const project = defineCollection({

@@ -15,4 +15,17 @@ export const papersSchema = z.object({
   doi: z.string().optional(),
 });
 
+export const employmentSchema = z.object({
+  _createdAt: z.string(),
+  _id: z.string(),
+  _rev: z.string(),
+  _type: z.literal("employment"),
+  _updatedAt: z.string(),
+  address: z.string(),
+  endYear: z.string(),
+  position: z.string(),
+  startYear: z.string(),
+});
+
 export type Paper = z.infer<typeof papersSchema>;
+export type Employment = z.infer<typeof employmentSchema>;
