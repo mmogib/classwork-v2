@@ -1,0 +1,68 @@
+import { getCollection } from "astro:content";
+import type { APIRoute } from "astro";
+
+export const GET: APIRoute = async () => {
+  try {
+    // Get all collections
+    const [courses, terms, teachers] = await Promise.all([
+      getCollection("course"),
+      getCollection("term"),
+      getCollection("teacher")
+    ]);
+
+    const debugInfo = {
+      coursesCount: courses.length,
+      termsCount: terms.length,
+      teachersCount: teachers.length,
+      sampleCourses: courses.slice(0, 3).map(course => ({
+        id: course.id,
+        termRef: course.data["term._ref"],
+        teacherRef: course.data["teacher._ref"],
+        code: course.data.code,
+        name: course.data.name
+      })),
+      sampleTerms: terms.slice(0, 10).map(term => ({
+        fileId: term.id,
+        dataId: term.data._id,
+        name: term.data.name,
+        termNum: term.data.term_num,
+        isActive: term.data.isActive
+      })),
+      sampleTeachers: teachers.map(teacher => ({
+        fileId: teacher.id,
+        dataId: teacher.data._id,
+        name: teacher.data.teacher_name,
+        email: teacher.data.email
+      })),
+      termIdMap: terms.map(t => `${t.id} -> ${t.data._id}`),
+      teacherIdMap: teachers.map(t => `${t.id} -> ${t.data._id}`)
+    };
+
+    return new Response(
+      JSON.stringify({
+        success: true,
+        message: "Debug info in response",
+        debug: debugInfo
+      }, null, 2),
+      {
+        status: 200,
+        statusText: "OK",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+  } catch (error) {
+    console.error("Error in debug:", error);
+    return new Response(
+      JSON.stringify({
+        success: false,
+        error: error instanceof Error ? error.message : "Unknown error",
+      }),
+      {
+        status: 500,
+        statusText: "Internal Server Error",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+};

@@ -1,6 +1,6 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection, reference } from "astro:content";
-import { papersSchema, employmentSchema } from "@mytypes/content_types";
+import { papersSchema, employmentSchema, educationSchema, projectSchema } from "@mytypes/content_types";
 // 2. Define your collection(s)
 
 const author = defineCollection({
@@ -41,16 +41,7 @@ const term = defineCollection({
 });
 const education = defineCollection({
   type: "data",
-  schema: z.object({
-    _createdAt: z.string(),
-    _id: z.string(),
-    _rev: z.string(),
-    _type: z.literal("education"),
-    _updatedAt: z.string(),
-    content: z.string(),
-    institution: z.string(),
-    year: z.string(),
-  }),
+  schema: educationSchema,
 });
 const papers = defineCollection({
   type: "data", // v2.5.0 and later
@@ -64,16 +55,7 @@ const employment = defineCollection({
 
 const project = defineCollection({
   type: "data",
-  schema: z.object({
-    _createdAt: z.string(),
-    _id: z.string(),
-    _rev: z.string(),
-    _type: z.literal("project"),
-    _updatedAt: z.string(),
-    order: z.number(),
-    status: z.enum(["proposed", "in-progress", "completed"]),
-    title: z.string(),
-  }),
+  schema: projectSchema,
 });
 
 const course = defineCollection({

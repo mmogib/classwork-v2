@@ -27,5 +27,29 @@ export const employmentSchema = z.object({
   startYear: z.string(),
 });
 
+export const educationSchema = z.object({
+  _createdAt: z.string(),
+  _id: z.string(),
+  _rev: z.string(),
+  _type: z.literal("education"),
+  _updatedAt: z.string(),
+  content: z.string(),
+  institution: z.string(),
+  year: z.string(),
+});
+
+export const projectSchema = z.object({
+  _createdAt: z.string(),
+  _id: z.string(),
+  _rev: z.string(),
+  _type: z.literal("project"),
+  _updatedAt: z.string(),
+  order: z.number(),
+  status: z.enum(["proposed", "in-progress", "completed"]),
+  title: z.string(),
+});
+
 export type Paper = z.infer<typeof papersSchema>;
 export type Employment = z.infer<typeof employmentSchema>;
+export type Education = z.infer<typeof educationSchema>;
+export type Project = z.infer<typeof projectSchema>;
