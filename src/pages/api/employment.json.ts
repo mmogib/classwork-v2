@@ -1,6 +1,5 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
-import type { Employment } from "@mytypes/content_types";
 
 type EmploymentResponse = {
   id: string;

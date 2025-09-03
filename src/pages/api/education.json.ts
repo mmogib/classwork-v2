@@ -1,6 +1,5 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
-import type { Education } from "@mytypes/content_types";
 
 type EducationResponse = {
   id: string;

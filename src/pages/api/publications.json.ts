@@ -1,6 +1,5 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
-import type { Paper } from "@mytypes/content_types";
 
 type Publication = {
   id: string;

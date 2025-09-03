@@ -114,7 +114,7 @@ export const GET: APIRoute = async ({ url }) => {
     const teacherMap = new Map(teachers.map(teacher => [teacher.id, teacher.data]));
 
     // Transform course data
-    let transformedCourses: CourseResponse[] = courses
+    let transformedCourses = courses
       .map(course => {
         // Extract the term and teacher IDs from the reference objects
         const termRef = course.data["term._ref"];
@@ -161,7 +161,7 @@ export const GET: APIRoute = async ({ url }) => {
           section: course.data.section,
           url2: course.data.url2,
           airbase: course.data.airbase,
-        };
+        } as CourseResponse;
       })
       .filter((course): course is CourseResponse => course !== null);
 

@@ -1,6 +1,5 @@
 import { getEntry } from "astro:content";
 import type { APIRoute } from "astro";
-import type { Employment } from "@mytypes/content_types";
 
 type EmploymentDetail = {
   id: string;

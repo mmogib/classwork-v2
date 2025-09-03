@@ -1,7 +1,27 @@
 {
-  "name": "classwork-v2",
+  "name": "mshahrani-academic-website",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2.0.0",
+  "description": "Dr. Mohammed Alshahrani's academic website featuring research publications, teaching portfolio, employment history, and project showcase. Built with Astro and TypeScript, providing read-only APIs for complete content management.",
+  "keywords": [
+    "academic-website",
+    "research-portfolio",
+    "publications-api",
+    "astro",
+    "typescript",
+    "education",
+    "mathematics",
+    "kfupm"
+  ],
+  "author": {
+    "name": "Dr. Mohammed Alshahrani",
+    "email": "mshahrani@kfupm.edu.sa",
+    "url": "https://faculty.kfupm.edu.sa/math/mshahrani"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmogib/classwork-v2"
+  },
   "engines": {
     "node": "22.x"
   },
