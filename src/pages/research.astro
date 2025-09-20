@@ -3,13 +3,16 @@ import Paper from "@components/Paper.astro";
 import Project from "@components/Project.astro";
 import MainLayout from "@layout/MainLayout.astro";
 import { getCollection } from "astro:content";
-import { ViewTransitions } from "astro:transitions";
-const allPapers = await getCollection("papers");
+import { ClientRouter } from "astro:transitions";
+const allPapers = (await getCollection("papers")).sort((a, b) => {
+  const val = b.data.key >= a.data.key ? 1 : -1;
+  return val;
+});
 const projects = await getCollection("project");
 ---
 
 <head>
-  <ViewTransitions />
+  <ClientRouter />
 </head>
 <MainLayout>
   <!-- have a button POST a click via AJAX -->

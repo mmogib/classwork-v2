@@ -3,13 +3,13 @@ import { getCollection } from "astro:content";
 import MainLayout from "@layout/MainLayout.astro";
 import Education from "@components/Education.astro";
 import Employment from "@components/Employment.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 const education = await getCollection("education");
 const employment = await getCollection("employment");
 ---
 
 <head>
-  <ViewTransitions />
+  <ClientRouter />
 </head>
 <MainLayout>
   <div class="flex flex-col m-auto md:w-3/4">

@@ -2,12 +2,12 @@
 import MainLayout from "@layout/MainLayout.astro";
 import { Image } from "astro:assets";
 import Me from "@assets/imgs/me-in-uot-2018-2.jpg";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import FrontPageCard from "@components/FrontPageCard.astro";
 ---
 
 <head>
-  <ViewTransitions />
+  <ClientRouter />
 </head>
 <MainLayout>
   <div class="flex flex-col items-center">

@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import MainLayout from "@layout/MainLayout.astro";
 import Course from "@components/Course.astro";
@@ -12,14 +12,14 @@ const courses_with_terms = await Promise.all(
     return {
       ...v,
       data: d,
-      term: { ...term, order: term.data.term_num },
+      term: { ...term, order: term?.data.term_num || 999 },
     };
   })
 );
 ---
 
 <head>
-  <ViewTransitions />
+  <ClientRouter />
 </head>
 
 <MainLayout>

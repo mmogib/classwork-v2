@@ -1,10 +1,16 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection, reference } from "astro:content";
-import { papersSchema, employmentSchema, educationSchema, projectSchema } from "@mytypes/content_types";
+import { glob } from "astro/loaders";
+import {
+  papersSchema,
+  employmentSchema,
+  educationSchema,
+  projectSchema,
+} from "@mytypes/content_types";
 // 2. Define your collection(s)
 
 const author = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/author" }),
   schema: z.object({
     _createdAt: z.string(),
     _id: z.string(),
@@ -15,7 +21,7 @@ const author = defineCollection({
   }),
 });
 const teacher = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/teacher" }),
   schema: z.object({
     _createdAt: z.string(),
     _id: z.string(),
@@ -29,7 +35,7 @@ const teacher = defineCollection({
   }),
 });
 const term = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/term" }),
   schema: z.object({
     _id: z.string(),
     _rev: z.string(),
@@ -40,26 +46,26 @@ const term = defineCollection({
   }),
 });
 const education = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/education" }),
   schema: educationSchema,
 });
 const papers = defineCollection({
-  type: "data", // v2.5.0 and later
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/papers" }),
   schema: papersSchema,
 });
 
 const employment = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/employment" }),
   schema: employmentSchema,
 });
 
 const project = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/project" }),
   schema: projectSchema,
 });
 
 const course = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/course" }),
   schema: z.object({
     _id: z.string(),
     _rev: z.string(),

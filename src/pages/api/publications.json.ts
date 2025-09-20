@@ -27,21 +27,21 @@ type ApiResponse = {
 
 export const GET: APIRoute = async ({ url }) => {
   const searchParams = url.searchParams;
-  const yearFilter = searchParams.get('year');
-  const publishedFilter = searchParams.get('published'); // 'true', 'false'
-  const acceptedFilter = searchParams.get('accepted'); // 'true', 'false'
-  const authorFilter = searchParams.get('author');
-  const journalFilter = searchParams.get('journal');
-  const limit = searchParams.get('limit');
-  const sortBy = searchParams.get('sort') || 'year'; // year, title, key
-  const order = searchParams.get('order') || 'desc'; // asc, desc
+  const yearFilter = searchParams.get("year");
+  const publishedFilter = searchParams.get("published"); // 'true', 'false'
+  const acceptedFilter = searchParams.get("accepted"); // 'true', 'false'
+  const authorFilter = searchParams.get("author");
+  const journalFilter = searchParams.get("journal");
+  const limit = searchParams.get("limit");
+  const sortBy = searchParams.get("sort") || "year"; // year, title, key
+  const order = searchParams.get("order") || "desc"; // asc, desc
 
   try {
     // Get all papers from the content collection
     const papers = await getCollection("papers");
 
     // Transform papers to publication format
-    let publications: Publication[] = papers.map(paper => ({
+    let publications: Publication[] = papers.map((paper) => ({
       id: paper.id,
       key: paper.data.key,
       title: paper.data.title,
@@ -61,30 +61,32 @@ export const GET: APIRoute = async ({ url }) => {
     if (yearFilter) {
       const year = parseInt(yearFilter);
       if (!isNaN(year)) {
-        publications = publications.filter(pub => pub.year === year);
+        publications = publications.filter((pub) => pub.year === year);
       }
     }
 
     if (publishedFilter !== null) {
-      const isPublished = publishedFilter === 'true';
-      publications = publications.filter(pub => pub.published === isPublished);
+      const isPublished = publishedFilter === "true";
+      publications = publications.filter(
+        (pub) => pub.published === isPublished
+      );
     }
 
     if (acceptedFilter !== null) {
-      const isAccepted = acceptedFilter === 'true';
-      publications = publications.filter(pub => pub.accepted === isAccepted);
+      const isAccepted = acceptedFilter === "true";
+      publications = publications.filter((pub) => pub.accepted === isAccepted);
     }
 
     if (authorFilter) {
-      publications = publications.filter(pub => 
-        pub.authors.some(author => 
+      publications = publications.filter((pub) =>
+        pub.authors.some((author) =>
           author.toLowerCase().includes(authorFilter.toLowerCase())
         )
       );
     }
 
     if (journalFilter) {
-      publications = publications.filter(pub => 
+      publications = publications.filter((pub) =>
         pub.journal?.toLowerCase().includes(journalFilter.toLowerCase())
       );
     }
@@ -92,22 +94,22 @@ export const GET: APIRoute = async ({ url }) => {
     // Sort publications
     publications.sort((a, b) => {
       let comparison = 0;
-      
+
       switch (sortBy) {
-        case 'year':
+        case "year":
           comparison = (a.year || 0) - (b.year || 0);
           break;
-        case 'title':
+        case "title":
           comparison = a.title.localeCompare(b.title);
           break;
-        case 'key':
+        case "key":
           comparison = a.key.localeCompare(b.key);
           break;
         default:
           comparison = (a.year || 0) - (b.year || 0);
       }
-      
-      return order === 'desc' ? -comparison : comparison;
+      console.log({ comparison, sortBy, order });
+      return order === "desc" ? -comparison : comparison;
     });
 
     // Apply limit
@@ -128,13 +130,12 @@ export const GET: APIRoute = async ({ url }) => {
       {
         status: 200,
         statusText: "OK",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
-          "Cache-Control": "public, max-age=3600" // Cache for 1 hour
+          "Cache-Control": "public, max-age=3600", // Cache for 1 hour
         },
       }
     );
-
   } catch (error) {
     console.error("Error fetching publications:", error);
 
