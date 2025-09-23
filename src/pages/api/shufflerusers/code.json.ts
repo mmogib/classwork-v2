@@ -14,8 +14,11 @@ type ApiResponse = {
   error?: string;
 };
 
-export const GET: APIRoute = async ({ params }) => {
-  const { code } = params;
+export const POST: APIRoute = async ({ request }) => {
+  const body = await request.json();
+  console.log("Request body:", body);
+  const { code } = body;
+  // const { code } = params;
   // Validate code parameter
   if (!code || typeof code !== "string") {
     return new Response(
@@ -46,8 +49,8 @@ export const GET: APIRoute = async ({ params }) => {
     if (!assignmentRecords || assignmentRecords.length === 0) {
       return new Response(
         JSON.stringify({
-          success: false,
-          message: "No users found",
+          success: true,
+          message: "No current assignments available",
           data: {},
         } as ApiResponse),
         {
