@@ -71,7 +71,6 @@ export const GET: APIRoute = async ({ params }) => {
 
     console.log(`Found student record: ${studentGradesRecords[0].id}`);
     const studentRecord = studentGradesRecords[0];
-
     // Step 2: Get field names from GradesFields where Display=yes
     console.log("Fetching GradesFields...");
     const gradeFieldsRecords = await gradesFieldsTable
@@ -114,7 +113,12 @@ export const GET: APIRoute = async ({ params }) => {
 
       // Get the value from the student's grades record
       let rawValue = studentRecord.get(fieldName);
-
+      rawValue = Array.isArray(rawValue) ? rawValue[0] : rawValue; // Handle Airtable array values
+      rawValue =
+        typeof rawValue === "number"
+          ? parseFloat(rawValue.toFixed(2))
+          : rawValue; // Round numbers to 2 decimal places
+      console.log(`Raw value for ${fieldName}:`, rawValue);
       // Check if grade is not yet published (field doesn't exist or is null/undefined)
       let value: string | number | undefined;
       if (rawValue === null || rawValue === undefined || rawValue === "") {
